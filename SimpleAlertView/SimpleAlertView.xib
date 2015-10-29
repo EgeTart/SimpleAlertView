@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SimpleAlertView" customModule="SimpleAlertView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="130"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcj-QE-oze">
+                    <rect key="frame" x="8" y="15" width="264" height="24"/>
+                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something Important Show Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9Jm-w7-K9c">
+                    <rect key="frame" x="8" y="47" width="264" height="21"/>
+                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="vj9-6L-zFi">
+                    <rect key="frame" x="8" y="76" width="264" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVr-qP-Nvn">
+                            <rect key="frame" x="0.0" y="0.0" width="117" height="40"/>
+                            <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Cancle">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="cancle:" destination="iN0-l3-epB" eventType="touchUpInside" id="Pqq-tS-gry"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZw-9y-vYR">
+                            <rect key="frame" x="147" y="0.0" width="117" height="40"/>
+                            <color key="backgroundColor" red="0.58394845273906482" green="0.30366879104737488" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Confirm">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="confirm:" destination="iN0-l3-epB" eventType="touchUpInside" id="gEl-lb-yZW"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Sr1-bX-A01"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="9Jm-w7-K9c" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Bsz-1C-rsQ"/>
+                <constraint firstItem="vj9-6L-zFi" firstAttribute="top" secondItem="9Jm-w7-K9c" secondAttribute="bottom" constant="8" id="Qp1-H5-wt4"/>
+                <constraint firstAttribute="trailing" secondItem="gcj-QE-oze" secondAttribute="trailing" constant="8" id="Sqa-ND-d5l"/>
+                <constraint firstAttribute="trailing" secondItem="vj9-6L-zFi" secondAttribute="trailing" constant="8" id="Y7D-Vt-fzZ"/>
+                <constraint firstItem="9Jm-w7-K9c" firstAttribute="top" secondItem="gcj-QE-oze" secondAttribute="bottom" constant="8" id="h4d-ou-Zcv"/>
+                <constraint firstAttribute="trailing" secondItem="9Jm-w7-K9c" secondAttribute="trailing" constant="8" id="iKT-Ad-qF0"/>
+                <constraint firstItem="gcj-QE-oze" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="jUz-ht-glF"/>
+                <constraint firstItem="vj9-6L-zFi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="vla-Dl-SGN"/>
+                <constraint firstItem="gcj-QE-oze" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="xoc-7k-qQQ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="cancleButton" destination="SVr-qP-Nvn" id="tnQ-yd-W4N"/>
+                <outlet property="confirmButton" destination="JZw-9y-vYR" id="6d6-Ia-p8K"/>
+                <outlet property="messageLabel" destination="9Jm-w7-K9c" id="vhP-6k-XxA"/>
+                <outlet property="titleLabel" destination="gcj-QE-oze" id="feZ-sh-wZb"/>
+            </connections>
+        </view>
+    </objects>
+</document>
