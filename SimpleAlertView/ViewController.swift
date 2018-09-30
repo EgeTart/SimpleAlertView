@@ -17,18 +17,18 @@ class ViewController: UIViewController {
         //接收通知
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "receiveNotification:", name: "buttonClick", object: nil)
     }
-
-    @IBAction func showAlertView(sender: UIButton) {
+    
+    @IBAction func showAlertView(_ sender: UIButton) {
         //加载xib文件, 拿到自定义的SimpleAlertView, 设置大小和位置并添加到根视图中
-        let alertView = NSBundle.mainBundle().loadNibNamed("SimpleAlertView", owner: nil, options: nil).first as! SimpleAlertView
+        let alertView = Bundle.main.loadNibNamed("SimpleAlertView", owner: nil, options: nil)?.first as! SimpleAlertView
         alertView.tag = 101
         
         alertView.delegate = self
-//        第一种方式
-//        alertView.setActionHandler("cancle") { () -> Void in
-//            print("test")
-//            alertView.removeFromSuperview()
-//        }
+        //        第一种方式
+        //        alertView.setActionHandler("cancle") { () -> Void in
+        //            print("test")
+        //            alertView.removeFromSuperview()
+        //        }
         
         self.view.addSubview(alertView)
     }
@@ -41,8 +41,8 @@ class ViewController: UIViewController {
         
         if action == "cancle" {
             
-            UIView.animateWithDuration(0.3, animations: { () -> Void in
-                alertView.center = CGPoint(x: UIScreen.mainScreen().bounds.midX, y: UIScreen.mainScreen().bounds.maxY)
+            UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                alertView.center = CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.maxY)
                 alertView.layer.opacity = 0
                 }) { (_) -> Void in
                     alertView.removeFromSuperview()
@@ -58,14 +58,14 @@ class ViewController: UIViewController {
 
 //第三种方式
 extension ViewController: SimpleAlertViewDelegate {
-    func simpleAlertView(action: String) {
+    func simpleAlertView(actionType action: String) {
         
         let alertView = self.view.viewWithTag(101) as! SimpleAlertView
         
         if action == "cancle" {
             
-            UIView.animateWithDuration(0.3, animations: { () -> Void in
-                alertView.center = CGPoint(x: UIScreen.mainScreen().bounds.midX, y: UIScreen.mainScreen().bounds.maxY)
+            UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                alertView.center = CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.maxY)
                 alertView.layer.opacity = 0
                 }) { (_) -> Void in
                     alertView.removeFromSuperview()
